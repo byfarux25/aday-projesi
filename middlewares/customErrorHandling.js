@@ -1,7 +1,7 @@
-const CustomError = require("../helpers/CustomError");
+const CustomError = require("../helpers/CustomError")
 
 const customErrorHandling = (err,req,res,next) => {
-
+    console.log(err)
     let customError = err 
 
     if (err.name==="SyntaxError") {
