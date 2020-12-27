@@ -36,7 +36,7 @@ function login() {
     let name
     let pimage
     
-    request.post("http://eraftek.appspot.com/api/auth/login",{email,password})
+    request.post("http://localhost/api/auth/login",{email,password})
     .then(res => {
         if (res.success) {
             name = res.data.name
@@ -55,7 +55,7 @@ function login() {
 function forget() {
     let forgetEmail = forgetFloatingInput.value
 
-    request.post("http://eraftek.appspot.com/api/auth/forgotpassword",{"email":forgetEmail})
+    request.post("http://localhost/api/auth/forgotpassword",{"email":forgetEmail})
     .then(response => {
         if (!response.success) {
             ui.modalMessage(response.message,"danger")
@@ -76,7 +76,7 @@ let no = candidateNo.value
 let alarm = candidateAlarm.value     
 let alarmNote = candidateNote.value   
  
-request.post("http://eraftek.appspot.com/api/candidate/addcandidate",
+request.post("http://localhost/api/candidate/addcandidate",
 {"name":name,"email":email,"linkedin":linkedin,"no":no,"alarm":alarm,"alarmNote":alarmNote})
 .then(res =>{
     if (res.success) {
@@ -91,27 +91,27 @@ request.post("http://eraftek.appspot.com/api/candidate/addcandidate",
 
 
 function getComimgCandidates() {
-request.get("http://eraftek.appspot.com/api/candidate/comingcandidates")
+request.get("http://localhost/api/candidate/comingcandidates")
 .then(res=>ui.sendCardToUI(res))
 .catch(err=>console.log(err))
 }
 
 
 function getAllCandidates() {
-    request.get("http://eraftek.appspot.com/api/candidate")
+    request.get("http://localhost/api/candidate")
 .then(res=>ui.sendCandidatesToUI(res))
 .catch(err => console.log(err))
 }
 
 function getAllUsers() {
-    request.get("http://eraftek.appspot.com/api/user")
+    request.get("http://localhost/api/user")
 .then(res=>ui.sendUsersToUI(res))
 .catch(err=>console.log(err))
 }
 
 
 function loadAdminPage() {
-    request.get("http://eraftek.appspot.com/api/admin")
+    request.get("http://localhost/api/admin")
     .then(res=>console.log(res))
     .catch(err=>console.log(err))
 }
@@ -129,7 +129,7 @@ $(document).ready(function(){
 
 function newPasswordSave() {
 let newPassword = newPasswordInput.value 
-request.put("http://eraftek.appspot.com/api/auth/resetpassword",{"password":newPassword})
+request.put("http://localhost/api/auth/resetpassword",{"password":newPassword})
 .then(res => {
     if (res.success) {
         console.log(res);
