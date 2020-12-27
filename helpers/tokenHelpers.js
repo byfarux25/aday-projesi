@@ -13,7 +13,8 @@ const sendTokenToCookie = (user,res) =>{
         expires : new Date(Date.now() + parseInt(JWT_COOKIE) * 1000 * 60),
         // httpOnly: true,
         httpOnly: false,
-        secure : NODE_ENV === "development" ? false : true
+        // secure : NODE_ENV === "development" ? false : true
+        secure : false
 
     })
     .json({

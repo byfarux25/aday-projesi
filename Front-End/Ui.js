@@ -98,7 +98,7 @@ class Ui {
 
     logoutProcess() {
        let get=(async(url)=>(await fetch(url)).json())
-        get("http://localhost/api/auth/logout")
+        get("https://eraftek.appspot.com/api/auth/logout")
         .then(res=>{
             if (res.success) {
                 afterLoginMenu.innerHTML = ""
@@ -128,9 +128,9 @@ class Ui {
             cardGroups.innerHTML += `
             <div class="col">
             <div class="card">
-              <a href="localhost.com"> <img src="public/upload/${element.profile_image}" class="card-img-top" alt="zzz"></a>
+              <a href="https://eraftek.appspot.com"> <img src="public/upload/${element.profile_image}" class="card-img-top" alt="zzz"></a>
               <div class="card-body">
-                <a href="localhost.com" class="text-decoration-none"><h5 class="card-title">${element.name}</h5></a></a>
+                <a href="https://eraftek.appspot.com" class="text-decoration-none"><h5 class="card-title">${element.name}</h5></a></a>
                 <p class="card-text">${element.alarm}</p>
                 <p class="card-text">${element.alarmNote}</p>
                 <p class="card-text">${element.no}</p>
@@ -147,9 +147,9 @@ class Ui {
             cardGroupsAdaylar.innerHTML += `
             <div class="col">
             <div class="card">
-              <a href="localhost.com"> <img src="public/upload/${element.profile_image}" class="card-img-top" alt="zzz"></a>
+              <a href="https://eraftek.appspot.com"> <img src="public/upload/${element.profile_image}" class="card-img-top" alt="zzz"></a>
               <div class="card-body">
-                <a href="localhost.com" class="text-decoration-none"><h5 class="card-title">${element.name}</h5></a></a>
+                <a href="https://eraftek.appspot.com" class="text-decoration-none"><h5 class="card-title">${element.name}</h5></a></a>
                 <p class="card-text">${element.alarm}</p>
                 <p class="card-text">${element.alarmNote}</p>
                 <p class="card-text">${element.no}</p>
@@ -164,9 +164,9 @@ class Ui {
             cardGroupsGetUsers.innerHTML += `
             <div class="col">
             <div class="card">
-              <a href="localhost.com"> <img src="public/upload/${element.profile_image}" class="card-img-top" alt="zzz"></a>
+              <a href="https://eraftek.appspot.com"> <img src="public/upload/${element.profile_image}" class="card-img-top" alt="zzz"></a>
               <div class="card-body">
-                <a href="localhost.com" class="text-decoration-none"><h5 class="card-title">${element.name}</h5></a></a>
+                <a href="https://eraftek.appspot.com" class="text-decoration-none"><h5 class="card-title">${element.name}</h5></a></a>
                 <p class="card-text" style="font-size: 80%;">${element.email}</p>
                 <p class="card-text">${element.role}</p>
               </div>
