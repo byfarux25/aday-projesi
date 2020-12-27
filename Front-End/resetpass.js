@@ -9,13 +9,13 @@ const ui = new Ui()
 function newPasswordSave() {
     let newPassword = newPasswordInput.value 
     
-    request.put("http://localhost/api/auth/resetpassword",{"password":newPassword})
+    request.put("http://eraftek.appspot.com/api/auth/resetpassword",{"password":newPassword})
     .then(res => {
         if (res.success) {
             console.log(res);
             ui.modalMessageNewPassword(res.message,"success")
             setTimeout(() => {
-                window.location.href="http://localhost"
+                window.location.href="http://eraftek.appspot.com"
             }, 2500);
         } else {
             ui.modalMessageNewPassword(res.message,"danger")
