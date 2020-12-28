@@ -1,9 +1,9 @@
 const CustomError = require("../helpers/CustomError")
 
 const customErrorHandling = (err,req,res,next) => {
-    console.log(err)
-    let customError = err 
 
+    let customError = err 
+    console.log(err)
     if (err.name==="SyntaxError") {
         customError = new CustomError("Beklenmedik Yazım hatası",400)
     }

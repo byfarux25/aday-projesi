@@ -109,7 +109,8 @@ const forgotpassword = asynchandler ( async (req,res,next) => {
 
     try {
         await sendMail({
-            from : process.env.SMTP_USER,
+            // from : process.env.SMTP_USER,
+            from : "far.sahin@hotmail.com",
             to : resetlenecekEmail,
             subject : "Parolanızı Sıfırlama Talebi",
             html : emailTemplate
@@ -139,7 +140,7 @@ const resetPassowrd = asynchandler ( async (req,res,next) => {
     const {password} = req.body
 
     if (!resetPasswordToken) {
-        return next(new CustomError("Lütfen bir parola girin"),400)
+        return next(new CustomError("Lütfen yeni bir parola girin"),400)
     }
 
     let user = await User.findOne({
